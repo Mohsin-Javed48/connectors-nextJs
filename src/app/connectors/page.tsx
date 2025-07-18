@@ -9,7 +9,6 @@ import type { RootState } from "@/store/store";
 import { toggleActive } from "@/store/features/connectors/connectorsSlice";
 
 export default function Home() {
-  // const [active, setActive] = useState<{ [key: number]: boolean }>({});
   const [searchTerm, setSearchTerm] = useState("");
   const router = useRouter();
   const dispatch = useDispatch();
@@ -24,49 +23,47 @@ export default function Home() {
   );
 
   return (
-    <>
-      <div className="flex justify-center items-center min-h-screen text-gray-900 bg-zinc-500">
-        <div className="text-black border border-gray-300 h-150 w-200 bg-white rounded-lg shadow-md">
-          {/* Header */}
-          <div className="flex justify-between p-4">
-            <p className="font-bold text-xl">Connectors</p>
-            <button
-              className="h-10 w-10 flex items-center justify-center bg-transparent border-0 text-black text-lg cursor-pointer"
-              onClick={() => router.push("/")}
-            >
-              <Image src={"/cross.svg"} alt="Add Icon" width={22} height={22} />
-            </button>
-          </div>
+    <div className="flex justify-center items-center min-h-screen text-gray-900 bg-zinc-500 px-4">
+      <div className="text-black border border-gray-300 bg-white rounded-lg shadow-md w-full max-w-6xl h-[90vh] overflow-hidden flex flex-col">
+        {/* Header */}
+        <div className="flex justify-between items-center p-4 border-b border-gray-200">
+          <p className="font-bold text-xl">Connectors</p>
+          <button
+            className="h-10 w-10 flex items-center justify-center bg-transparent border-0 text-black text-lg cursor-pointer"
+            onClick={() => router.push("/")}
+          >
+            <Image src={"/cross.svg"} alt="Close" width={22} height={22} />
+          </button>
+        </div>
 
-          <hr className="w-full text-gray-300" />
+        {/* Search Bar */}
+        <div className="relative p-4">
+          <Image
+            src="/search.svg"
+            alt="Search Icon"
+            width={20}
+            height={20}
+            className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400"
+          />
+          <input
+            className="h-10 w-full pl-10 pr-3 border rounded-lg focus:outline-none"
+            placeholder="Search among 2,700 connectors..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
 
-          {/* Search Bar */}
-          <div className="relative p-5">
-            <Image
-              src="/search.svg"
-              alt="Search Icon"
-              width={22}
-              height={22}
-              className="absolute left-7 top-1/2 transform -translate-y-1/2 text-gray-400"
-            />
-            <input
-              className="h-10 w-full pl-10 pr-3 border rounded-lg focus:outline-none"
-              placeholder="Search among 2,700 connectors..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-
-          {/* Connectors Grid */}
-          <div className="max-h-96 w-full border-0 grid grid-cols-2 gap-4 overflow-auto p-4">
+        {/* Connectors Grid */}
+        <div className="flex-1 overflow-auto px-4 pb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredConnectors.map((connector, index) => (
               <div
                 key={index}
-                className="bg-white shadow-md rounded-lg p-4 flex items-center justify-between w-full h-auto border border-gray-200"
+                className="bg-white shadow-sm rounded-lg p-4 flex items-center justify-between border border-gray-200"
               >
-                <div className="grid grid-cols-5 grid-rows-1 gap-2 items-center">
+                <div className="flex items-start gap-3 w-full">
                   {/* Connector Icon */}
-                  <div className="w-12 h-12 bg-gray-100 rounded-md flex items-center justify-center overflow-hidden col-span-1">
+                  <div className="min-w-[48px] h-12 bg-gray-100 rounded-md flex items-center justify-center overflow-hidden">
                     <Image
                       src={connector.image}
                       alt={connector.name}
@@ -77,15 +74,19 @@ export default function Home() {
                   </div>
 
                   {/* Connector Info */}
-                  <div className="ml-4 col-span-3">
-                    <h2 className="text-lg font-semibold">{connector.name}</h2>
-                    <p className="text-gray-600">{connector.description}</p>
+                  <div className="flex-1">
+                    <h2 className="text-base font-semibold">
+                      {connector.name}
+                    </h2>
+                    <p className="text-sm text-gray-600 line-clamp-2">
+                      {connector.description}
+                    </p>
                   </div>
 
                   {/* Action Button */}
                   <div>
                     <button
-                      className={`border w-8 h-8 rounded-sm flex items-center justify-center text-lg font-bold transition-all ml-2 ${
+                      className={`w-8 h-8 flex items-center justify-center rounded-sm border transition-all ${
                         activeMap[index]
                           ? "bg-blue-500 text-white border-blue-500"
                           : "bg-white text-gray-500 border-gray-300 hover:bg-gray-100"
@@ -94,10 +95,9 @@ export default function Home() {
                     >
                       <Image
                         src="/plus-icon.svg"
-                        alt={connector.name}
-                        width={48}
-                        height={48}
-                        className="object-cover w-full h-full"
+                        alt="toggle"
+                        width={16}
+                        height={16}
                       />
                     </button>
                   </div>
@@ -107,6 +107,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
