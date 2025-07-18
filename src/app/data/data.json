@@ -1,0 +1,51 @@
+{
+  "connectors": [
+    {
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg",
+      "name": "Gmail",
+      "description": "Draft replies, summarize threads, & search your inbox"
+    },
+    {
+      "image": "/drive.png",
+
+      "name": "Google Drive",
+      "description": "Find and analyze files instantly"
+    },
+    {
+      "image": "/calendar.svg",
+
+      "name": "Google Calendar",
+      "description": "Understand your schedule and optimize your time"
+    },
+    {
+      "image": "/outlook.svg",
+
+      "name": "Microsoft Outlook",
+      "description": "Manage emails, draft responses, and organize your inbox"
+    },
+    {
+      "image": "/outlook-calendar.svg",
+
+      "name": "Microsoft Outlook Calendar",
+      "description": "Schedule meetings and manage your calendar efficiently"
+    },
+    {
+      "image": "/onedrive.svg",
+
+      "name": "Microsoft OneDrive",
+      "description": "Access and manage your cloud storage files"
+    },
+    {
+      "image": "/box.svg",
+
+      "name": "Box",
+      "description": "Collaborate on files and manage content securely"
+    },
+    {
+      "image": "/dropbox.svg",
+
+      "name": "Dropbox",
+      "description": "Store, sync, and share files in the cloud"
+    }
+  ]
+}
