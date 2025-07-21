@@ -3,49 +3,50 @@
     {
       "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg",
       "name": "Gmail",
-      "description": "Draft replies, summarize threads, & search your inbox"
+      "description": "Draft replies, summarize threads, & search your inbox",
+      "backgroundColor": "#fdecea"
     },
     {
       "image": "/drive.png",
-
       "name": "Google Drive",
-      "description": "Find and analyze files instantly"
+      "description": "Find and analyze files instantly",
+      "backgroundColor": "#f7f8e9"
     },
     {
       "image": "/calendar.svg",
-
       "name": "Google Calendar",
-      "description": "Understand your schedule and optimize your time"
+      "description": "Understand your schedule and optimize your time",
+      "backgroundColor": "#e4effe"
     },
     {
       "image": "/outlook.svg",
-
       "name": "Microsoft Outlook",
-      "description": "Manage emails, draft responses, and organize your inbox"
+      "description": "Manage emails, draft responses, and organize your inbox",
+      "backgroundColor": "#89CFF0"
     },
     {
       "image": "/outlook-calendar.svg",
-
       "name": "Microsoft Outlook Calendar",
-      "description": "Schedule meetings and manage your calendar efficiently"
+      "description": "Schedule meetings and manage your calendar efficiently",
+      "backgroundColor": "#f5f2c9"
     },
     {
       "image": "/onedrive.svg",
-
       "name": "Microsoft OneDrive",
-      "description": "Access and manage your cloud storage files"
+      "description": "Access and manage your cloud storage files",
+      "backgroundColor": "#e5f6fc"
     },
     {
       "image": "/box.svg",
-
       "name": "Box",
-      "description": "Collaborate on files and manage content securely"
+      "description": "Collaborate on files and manage content securely",
+      "backgroundColor": "#f1cafc"
     },
     {
       "image": "/dropbox.svg",
-
       "name": "Dropbox",
-      "description": "Store, sync, and share files in the cloud"
+      "description": "Store, sync, and share files in the cloud",
+      "backgroundColor": "#9fc9f5"
     }
   ]
 }

@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface CounterState {
   active: { [key: number]: boolean };
+  
 }
 const loadState = (): { [key: number]: boolean } => {
   if (typeof window !== "undefined") {
